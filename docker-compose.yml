@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+    scanslated:
+      build: ./app
+      restart: always
+      command: uwsgi --http :8001 --wsgi-file app/portal/wsgi.py
+      ports:
+        - 8000:8000

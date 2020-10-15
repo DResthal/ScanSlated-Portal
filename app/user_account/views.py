@@ -11,7 +11,7 @@ def register(response):
     if response.method == "POST":
         form = RegisterForm(response.POST)
         form.save()
-        return redirect('user_account/success')
+        return redirect(reverse('success'))
     else:
         form = RegisterForm()
     return render(response, 'user_account/register.html', {"form": form})

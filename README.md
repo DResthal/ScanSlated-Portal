@@ -16,6 +16,7 @@ Mock up user portal for ScanSlated, API and Front end included in one repo
 - add to portfolio
 - email Yianni
 - customize portfolio text
+- Handle no user reports
 
 Things I wish I could have done:
 - add phone number to user model
