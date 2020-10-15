@@ -1,0 +1,36 @@
+<style>
+    nav {
+        background: linear-gradient(165deg, rgba(32, 218, 176, .8) 0%, rgba(47, 128, 219, .8) 58%, rgba(66, 60, 223, .8) 100%);
+    }
+
+    nav a {
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
+        opacity: 100%;
+    }
+
+    .brand {
+        font-weight: 700;
+        color: white;
+        opacity: 100%;
+    }
+</style>
+<nav class="navbar stickky-top navbar-expand-md navbar-light">
+    <a class="navbar-brand" href="#"><h3 class="brand">ScanSclated</h3></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#togglethis" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="togglethis">
+        <a href="{% url 'website:home'%}" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Demo</a>
+        {% if user.is_authenticated %}
+            <a href="#" class="nav-link">Account</a>
+            <a href="#" class="nav-link">Reports</a>
+            <a href="#" class="nav-link">Settings</a>
+            <a href="/logout" class="nav-link">Logout</a>
+        {% else %}
+            <a href="/login" class="nav-link">Login</a>
+        {% endif %}
+    </div>
+</nav>
