@@ -11,35 +11,35 @@ def register(response):
     if response.method == "POST":
         form = RegisterForm(response.POST)
         form.save()
-        return redirect(reverse('success'))
+        return redirect(reverse("success"))
     else:
         form = RegisterForm()
-    return render(response, 'user_account/register.html', {"form": form})
+    return render(response, "user_account/register.html", {"form": form})
 
 
 def success(request):
-    return render(request, 'user_account/success.html')
+    return render(request, "user_account/success.html")
 
 
 def login(request):
-    return render(request, 'user_account/login.html')
+    return render(request, "user_account/login.html")
 
 
 def myaccount(request):
-    return render(request, 'user_account/myaccount.html')
+    return render(request, "user_account/myaccount.html")
 
 
 def reports(request):
     if request.user.is_authenticated:
         reports = request.user.report_set.all()
-        return render(request, 'user_account/reports_list.html', {"reports": reports})
+        return render(request, "user_account/reports_list.html", {"reports": reports})
     else:
-        return redirect(reverse('login'))
+        return redirect(reverse("login"))
 
 
 def reportdetail(request, id):
     if request.user.is_authenticated:
         report = Report.objects.get(id=id)
-        return render(request, 'user_account/report_detail.html', {"report": report})
+        return render(request, "user_account/report_detail.html", {"report": report})
     else:
-        return redirect(reverse('login'))
+        return redirect(reverse("login"))

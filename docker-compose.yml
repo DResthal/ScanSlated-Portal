@@ -6,4 +6,4 @@ services:
       restart: always
       command: uwsgi --http :8001 --wsgi-file app/portal/wsgi.py
       ports:
-        - 8000:8000
+        - 8001:8001
