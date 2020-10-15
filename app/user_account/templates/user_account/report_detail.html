@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% block content %}
+<style>
+    body {
+        background-color: #ecf0f4;
+    }
+    .content-container {}
+    .page {
+        width: 75%;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        padding: 1rem;
+        background-color: white;
+    }
+    .title {}
+    .page-sections {}
+    .section {
+        display: flex;
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+        border-bottom: 2px dashed #e3e8ee;
+    }
+    .section div {
+        width: 45%;
+        text-align: left;
+        margin-top: 1rem;
+       }
+
+
+</style>
+<div class="mx-auto content-container">
+    <div class="mx-auto page border">
+        <h3 class="text-center title">{{report.title}}</h3>
+        <p class="text-center"><sub>Date Published: {{report.pub_date}}</sub></p>
+        <div class="mx-auto page-sections">
+            {% for field in report.reportfield_set.all %}
+            <div class="mx-auto section">
+                <div class="mx-auto descript">
+                    <p><strong>{{field.title}}: </strong> {{field.description}}</p>
+                </div>
+                <div class="mx-auto translate">
+                    <p>{{field.translation}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <h3 class="mx-auto text-center mt-3 mb-5">Findings:</h3>
+            {% for find in report.reportfindings_set.all %}
+            <div class="mx-auto section">
+                <div class="mx-auto descript">
+                    <p>{{find.description}}</p>
+                </div>
+                <div class="mx-auto translate">
+                    <p>{{find.translation}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

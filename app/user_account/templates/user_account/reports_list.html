@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% block content %}
+<style>
+    .content-container {
+        width: 100%;
+        height: 100%;
+        padding-top: 3rem;
+    }
+
+    .reports-list-container {
+        width: 75%;
+        padding: 1.5rem;
+        border-radius: 2rem;
+        box-shadow: 5px 5px 3px grey;
+        background: linear-gradient(165deg, rgba(32, 218, 176, .8) 0%, rgba(47, 128, 219, .8) 58%, rgba(66, 60, 223, .8) 100%);
+    }
+
+    .report-item-container {
+        padding: 1rem;
+        background-color: white;
+        border-radius: .5rem;
+        box-shadow: 2px 2px 1px grey;
+    }
+
+    .report-item-container:hover {
+        transform: scale(1.05);
+    }
+
+    .reports-list-container a {
+
+    }
+
+</style>
+<div class="mx-auto content-container">
+    <div class="mx-auto reports-list-container">
+        {% for report in reports %}
+        <a href="{% url 'user_account:report_detail' report.id %}">
+            <div class="mx-auto my-3 d-flex justify-content-between report-item-container border-bottom border-right">
+                <h4>{{report.title}}</h4>
+                <p>Published: {{report.pub_date}}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

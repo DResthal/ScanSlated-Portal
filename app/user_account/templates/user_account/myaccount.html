@@ -11,24 +11,52 @@
 
         .info-container {
             margin: auto;
+
             margin-top: 5rem;
-            padding: 6rem;
+            padding: 5rem;
             display: inline-block;
+            background-color: white;
         }
+        .item-box {
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .
     </style>
 <div class="container">
     <div class="info-container border border-primary rounded-lg">
-        <div class="mx-auto text-center">
-            <h4>{{user.username}}</h4>
+        <div class="item-box">
+            <div class="category">
+                <p>Username:</p>
+            </div>
+            <div class="mx-auto text-center">
+                <p>{{user.username}}</p>
+            </div>
         </div>
-        <div class="mx-auto text-center">
-            <h4>{{user.first_name}}</h4>
+        <div class="item-box d-flex justify-content-between mx-auto">
+            <div class="category">
+                <p>First Name:</p>
+            </div>
+            <div class="mx-auto">
+                <p>{{user.first_name}}</p>
+            </div>
         </div>
-        <div class="mx-auto text-center">
-            <h4>{{user.last_name}}</h4>
+        <div class="item-box d-flex justify-content-between mx-auto">
+            <div class="category">
+                <p>Last Name:</p>
+            </div>
+            <div class="mx-auto text-center">
+                <p>{{user.last_name}}</p>
+            </div>
         </div>
-        <div class="mx-auto text-center">
-            <h4>{{user.email}}</h4>
+        <div class="item-box d-flex justify-content-between mx-auto">
+            <div class="category">
+                <p>Email:</p>
+            </div>
+            <div class="mx-auto text-center">
+                <p>{{user.email}}</p>
+            </div>
         </div>
     </div>
 </div>

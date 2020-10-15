@@ -29,4 +29,6 @@ class ReportAdmin(admin.ModelAdmin):
 
     inlines = [ReportFieldInline, ReportFindingsInline]
 
+    save_as = True
+
 admin.site.register(Report, ReportAdmin)
