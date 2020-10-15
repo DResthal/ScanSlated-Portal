@@ -1,4 +1,35 @@
 {% extends 'index.html' %}
 {% block content %}
-    <h1>My Account</h1>
+    <style>
+        .container {
+            width: 100%;
+            min-height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: middle;
+        }
+
+        .info-container {
+            margin: auto;
+            margin-top: 5rem;
+            padding: 6rem;
+            display: inline-block;
+        }
+    </style>
+<div class="container">
+    <div class="info-container border border-primary rounded-lg">
+        <div class="mx-auto text-center">
+            <h4>{{user.username}}</h4>
+        </div>
+        <div class="mx-auto text-center">
+            <h4>{{user.first_name}}</h4>
+        </div>
+        <div class="mx-auto text-center">
+            <h4>{{user.last_name}}</h4>
+        </div>
+        <div class="mx-auto text-center">
+            <h4>{{user.email}}</h4>
+        </div>
+    </div>
+</div>
 {% endblock %}
